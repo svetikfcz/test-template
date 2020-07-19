@@ -111,10 +111,26 @@ body {
 
 .main-header-top {
     display: flex;
+    flex-wrap: wrap;
+}
+
+.main-header-menu-wrp {
+    width: 100%;
+    display: flex;
+}
+
+label,
+#mobile-menu {
+  display: none;
+}
+
+input[type="checkbox"]:checked ~ .main-header-menu {
+  visibility: visible;
 }
 
 .main-header-menu {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .main-header-menu-item {
@@ -348,6 +364,7 @@ body {
     padding: 78px 0 78px 0;
     box-sizing: border-box;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -454,8 +471,12 @@ body {
     justify-content: space-between;
 }
 
-.purchase-title {
+.purchase-wrp {
     width: 900px;
+}
+
+.purchase-title {
+    width: 100%;
     margin: 0;
     font-family: raleway;
     font-size: 28px;
@@ -465,7 +486,6 @@ body {
 }
 
 .purchase-title-waxom {
-    width: 900px;
     font-family: raleway;
     font-size: 28px;
     line-height: 1.2;
@@ -474,7 +494,7 @@ body {
 }
 
 .purchase-txt {
-    width: 900px;
+    width: 100%;
     margin: 8px 0 0 0;
     font-family: montserrat-light;
     font-size: 18px;
@@ -850,6 +870,7 @@ body {
     background-color: #f4f5f8;
     background-image: linear-gradient(90.0deg, #211b19 0%, #4e3427 100%);
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -989,6 +1010,10 @@ body {
     left: 110px;
 }
 
+.recent-posts-item-link:hover {
+    color: #fff;
+}
+
 .recent-posts-item-link:active {
     color: #998675;
 }
@@ -1055,9 +1080,15 @@ body {
     background-color: #a48d72;
 }
 
+.recent-posts-wrp {
+    width: 100%;
+    margin: 40px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
 .recent-posts-arrow {
     display: block;
-    margin: 40px 5px 0 5px; 
     border: none;
     outline: none;
     background-color: transparent;  
@@ -1084,6 +1115,7 @@ body {
     background-position: center;
     background-size: auto 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -1163,11 +1195,20 @@ body {
     color: #a48d72;
 }
 
+/* .company-about-link:hover.company-about-link::after{
+    border-left: 5px solid #c7b299;
+}
+
+.company-about-link:hover.company-about-link::after{
+    border-left: 5px solid #a48d72;
+} */
+
 .main-footer-wrp {
     width: 270px;
     margin: 0 14px 0 14px;
     display: flex;
     flex-wrap: wrap;
+    align-content: flex-start;
 }
 
 .main-footer-wrp-title {
@@ -1233,20 +1274,31 @@ body {
     color: #00bff3;
 }
 
+.widjet-wrp {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    margin: 26px 0 0 0;
+}
+
+.widjet-img:nth-child(1) {
+    margin: 0 10px 10px 0;
+}
+
 .widjet-img:nth-child(2) {
-    margin: 0 10px 0 0;
+    margin: 0 0 10px 0;
 }
 
 .widjet-img:nth-child(3) {
-    margin: 0;
-}
-
-.widjet-img:nth-child(4) {
     margin: 0 10px 0 0;
 }
 
-.widjet-img:nth-child(5) {
+.widjet-img:nth-child(4) {
     margin: 0;
+}
+
+.widjet-img:hover {
+    filter: brightness(70%);
 }
 
 .footer-info {
@@ -1254,6 +1306,7 @@ body {
     padding: 45px 376px 52px 374px;
     box-sizing: border-box;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     background-color: #111111;
 }
@@ -1326,4 +1379,174 @@ body {
     position: absolute;
     top: -3px;
     left: -13px;
+}
+
+@media (max-width: 576px) {
+    body {
+        width: 100%;
+    }
+    .main-header {
+        padding: 10px;
+        background-size: 100%;
+    }
+    .main-header-top {
+        width: 100%;
+    }
+    .mobile-menu-button {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 86px;
+        left: 11px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 1;
+    }
+    .mobile-menu-line,
+    .mobile-menu-line::before,
+    .mobile-menu-line::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        transition-duration: .25s;
+    }
+    .mobile-menu-line::before {
+        content: '';
+        top: -8px;
+    }
+    .mobile-menu-line::after {
+        content: '';
+        top: 8px;
+    }
+    .main-header-menu {
+        visibility: hidden;
+        margin: 0 auto;
+        width: 100%;
+        flex-direction: column;
+    }
+    .main-header-carusel {
+        display: none;
+    }
+    .section-features {
+        padding: 10px;
+    }
+    .features-item {
+        width: 230px;
+        margin: 10px 10px 10px 10px;
+    }
+    .section-portfolio {
+        padding: 20px 0 0 0;
+    }
+    .portfolio-img {
+        width: 100%;
+        min-height: 200px;
+        background-size: 50%;
+    }
+    .purchase {
+        padding: 20px 10px 20px 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .purchase-button {
+        margin: 10px 0 0 0;
+    }
+    .section-projects {
+        padding: 20px 10px 20px 10px;
+    }
+    .projects-menu {
+        margin: 20px 0 20px 0;
+    }
+    .projects-button {
+        margin: 0 0 30px 0;
+    }
+    .section-video {
+        min-height: auto;
+    }
+    .video-bg {
+        width: 100%;
+    }
+    .video-block {
+        width: 50%;
+        top: 13%;
+        left: 26%;
+    }
+    .video-title {
+        width: 100%;
+        margin: 10px 0 0 0;
+        font-size: 20px;
+    }
+    .video-txt {
+        display: none;
+    }
+    .video-txt-time {
+        display: none;
+    }
+    .section-mobile {
+        padding: 10px;
+        min-height: 600px;
+        background-position: 13px bottom;
+        background-size: 40%;
+    }
+    .mobile-wrp {
+        width: 100%;
+    }
+    .mobile-title {
+        padding: 0;
+        text-align: center;
+    }
+    .mobile-txt {
+        padding: 0;
+        margin: 20px 0 15px 0;
+    }
+    .mobile-list {
+        margin: 0 0 0 180px;
+    }
+    .mobile-list-item {
+        font-size: 12px;
+        line-height: 26px;
+    }
+    .section-stat {
+        padding: 20px 10px 20px 10px;
+    }
+    .stat-item {
+        margin: 10px 36px 10px 36px;
+    }
+    .recent-posts {
+        padding: 20px 10px 20px 10px;
+    }
+    .recent-posts-txt {
+        margin: 10px 20px 10px 20px;
+    }
+    .recent-posts-item {
+        margin: 10px 20px 10px 20px;
+    }
+    .recent-posts-wrp {
+        margin: 20px 0 0 0;
+    }
+    .partners-item {
+        margin: 15px 10px 15px 10px;
+    }
+    .main-footer {
+        padding: 10px;
+        justify-content: center;
+    }
+    .company-about {
+        width: 400px;
+    }
+    .company-about-txt {
+        margin: 28px 0 18px 0;
+    }
+    .main-footer-wrp {
+        display: none;
+    }
+    .footer-info {
+        padding: 10px;
+        justify-content: center;
+    }
+    .footer-info-wrp {
+        margin: 10px 0 10px 0;
+    }
 }
