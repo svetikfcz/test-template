@@ -111,12 +111,12 @@ body {
 
 .main-header-top {
     display: flex;
-    flex-wrap: wrap;
 }
 
 .main-header-menu-wrp {
     width: 100%;
     display: flex;
+    justify-content: flex-end;
 }
 
 label,
@@ -1387,10 +1387,11 @@ input[type="checkbox"]:checked ~ .main-header-menu {
     }
     .main-header {
         padding: 10px;
-        background-size: 100%;
+        background-size: cover;
     }
     .main-header-top {
         width: 100%;
+        flex-wrap: wrap;
     }
     .mobile-menu-button {
         display: flex;
@@ -1421,11 +1422,31 @@ input[type="checkbox"]:checked ~ .main-header-menu {
         content: '';
         top: 8px;
     }
+    input[type="checkbox"]:checked ~ .main-header-menu {
+       /*  height: auto; */
+        visibility: visible;
+
+    position: absolute;
+    height: 314px;
+    top: 129px;
+    left: 0px;
+    padding-left: 10px;
+    width: auto;
+    background-color: #00000069;
+    opacity: 1;
+    }
     .main-header-menu {
+        height: 0;
         visibility: hidden;
         margin: 0 auto;
-        width: 100%;
+       /* width: 100%; */
         flex-direction: column;
+
+ 
+    width: 0%;
+    transition: left 0.5s;
+    left: -115px;
+    opacity: 0;
     }
     .main-header-carusel {
         display: none;
