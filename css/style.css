@@ -1423,17 +1423,18 @@ input[type="checkbox"]:checked ~ .main-header-menu {
         top: 8px;
     }
     input[type="checkbox"]:checked ~ .main-header-menu {
-       /*  height: auto; */
+        height: auto;
         visibility: visible;
-
-    position: absolute;
-    height: 314px;
-    top: 129px;
-    left: 0px;
-    padding-left: 10px;
-    width: auto;
-    background-color: #00000069;
-    opacity: 1;
+        position: absolute;
+        /* min-height: 320px; */
+        top: 129px;
+        left: 0px;
+        padding: 0  0 20px 10px;
+        box-sizing: border-box;
+        width: auto;
+        background-color: #998675;
+        filter: brightness(0.7);
+        opacity: 1;
     }
     .main-header-menu {
         height: 0;
@@ -1441,12 +1442,13 @@ input[type="checkbox"]:checked ~ .main-header-menu {
         margin: 0 auto;
        /* width: 100%; */
         flex-direction: column;
-
- 
-    width: 0%;
-    transition: left 0.5s;
-    left: -115px;
-    opacity: 0;
+        width: 0%;
+        transition: left 0.5s;
+        left: -115px;
+        opacity: 0;
+    }
+    .search-form-input:focus {
+        background-color: #998675;
     }
     .main-header-carusel {
         display: none;
